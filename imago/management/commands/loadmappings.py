@@ -9,6 +9,7 @@ from boundaries.models import BoundarySet
 
 
 def load_mapping(boundary_set_id, key, prefix, boundary_key='external_id', ignore=None, quiet=False):
+
     if ignore:
         ignore = re.compile(ignore)
     ignored = 0
@@ -19,8 +20,8 @@ def load_mapping(boundary_set_id, key, prefix, boundary_key='external_id', ignor
     for div in Division.get('ocd-division/country:' + settings.IMAGO_COUNTRY).children(levels=100):
         if div.attrs[key]:
             geoid_mapping[div.attrs[key]] = div.id
-
-    print('processing', boundary_set_id)
+        else:
+            geoid_mapping[div.id] = div.id
 
     boundary_set = BoundarySet.objects.get(pk=boundary_set_id)
     if callable(boundary_key):
@@ -32,10 +33,13 @@ def load_mapping(boundary_set_id, key, prefix, boundary_key='external_id', ignor
             boundary_property = boundary_key(boundary)
         else:
             boundary_property = boundary[boundary_key]
+        
         ocd_id = geoid_mapping.get(prefix + boundary_property)
+
         if ocd_id:
             division_geometries.append(DivisionGeometry(division_id=ocd_id,
                                                         boundary_id=boundary['id']))
+
         elif not ignore or not ignore.match(boundary['name']):
             if not quiet:
                 print('unmatched external id', boundary['name'], boundary_property)
