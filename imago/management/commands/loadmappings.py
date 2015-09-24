@@ -22,7 +22,9 @@ def load_mapping(boundary_set_id, key, prefix, boundary_key='external_id', ignor
             geoid_mapping[div.attrs[key]] = div.id
         else:
             geoid_mapping[div.id] = div.id
-
+    
+    print('processing', boundary_set_id)
+    
     boundary_set = BoundarySet.objects.get(pk=boundary_set_id)
     if callable(boundary_key):
         fields = []
