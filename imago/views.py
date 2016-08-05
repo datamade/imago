@@ -175,6 +175,7 @@ class BillList(PublicListEndpoint):
 
         'from_organization.jurisdiction.id',
         'from_organization.jurisdiction.name',
+        'updated_at',
     ]
 
     def adjust_filters(self, params):
@@ -268,7 +269,7 @@ class EventList(PublicListEndpoint):
     serialize_config = EVENT_SERIALIZE
     default_fields = [
         'id', 'name', 'description', 'classification', 'start_time',
-        'timezone', 'end_time', 'all_day', 'status',
+        'timezone', 'end_time', 'all_day', 'status', 'updated_at',
     ]
 
 
