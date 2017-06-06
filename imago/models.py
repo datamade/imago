@@ -1,7 +1,7 @@
 from django.contrib.gis.db import models
 from django.core.urlresolvers import reverse
 from boundaries.models import Boundary
-from opencivicdata.models import Division
+from opencivicdata.core.models import Division
 
 
 class DivisionGeometry(models.Model):

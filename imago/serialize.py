@@ -4,7 +4,7 @@
 
 import copy
 import pytz
-from opencivicdata.models import Division
+from opencivicdata.core.models import Division
 
 """
 The following specs in this file are used to limit exactly what we can

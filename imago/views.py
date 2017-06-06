@@ -3,14 +3,14 @@
 #    - Paul R. Tagliamonte <paultag@sunlightfoundation.com>
 
 
-from opencivicdata.models import (Jurisdiction,
-                                  Organization,
-                                  Person,
-                                  Bill,
-                                  VoteEvent,
-                                  Event,
-                                  Division
-                                 )
+from opencivicdata.core.model import (Jurisdiction,
+                                      Organization,
+                                      Person,
+                                      Division)
+from opencivicdata.legislative.model import (Bill,
+                                             VoteEvent,
+                                             Event)
+
 
 from .helpers import (PublicListEndpoint,
                       PublicDetailEndpoint,
