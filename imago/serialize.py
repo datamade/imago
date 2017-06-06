@@ -343,9 +343,8 @@ EVENT_SERIALIZE = dict([
     ('created_at', {}),
     ('updated_at', {}),
 
-    ('start_date', lambda x: dout(x.start_date)),
-    ('end_date', lambda x: dout(x.end_date)),
-    ('timezone', {}),
+    ('start_date', {}),
+    ('end_date', {}),
 
     ('all_day', {}),
     ('status', {}),
