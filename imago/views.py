@@ -268,8 +268,8 @@ class EventList(PublicListEndpoint):
     model = Event
     serialize_config = EVENT_SERIALIZE
     default_fields = [
-        'id', 'name', 'description', 'classification', 'start_time',
-        'timezone', 'end_time', 'all_day', 'status', 'updated_at',
+        'id', 'name', 'description', 'classification', 'start_date',
+        'timezone', 'end_date', 'all_day', 'status', 'updated_at',
     ]
 
 
