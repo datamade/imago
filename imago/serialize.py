@@ -52,8 +52,8 @@ JURISDICTION_SERIALIZE = dict([
     ("name", {}),
     ("url", {}),
 
-    ("updated_at", {}),
-    ("created_at", {}),
+    ('created_at', lambda x: dout(x.created_at)),
+    ('updated_at', lambda x: dout(x.updated_at)),
 
     ("classification", {}),
     ("extras", lambda x: x.extras),
@@ -111,8 +111,8 @@ ORGANIZATION_SERIALIZE = dict([
     ("name", {}),
     ("image", {}),
 
-    ("created_at", {}),
-    ("updated_at", {}),
+    ('created_at', lambda x: dout(x.created_at)),
+    ('updated_at', lambda x: dout(x.updated_at)),
 
     ("extras", lambda x: x.extras),
 
@@ -158,8 +158,8 @@ PERSON_SERIALIZE = dict([
     ("birth_date", {}),
     ("death_date", {}),
 
-    ("created_at", {}),
-    ("updated_at", {}),
+    ('created_at', lambda x: dout(x.created_at)),
+    ('updated_at', lambda x: dout(x.updated_at)),
 
     ("extras", lambda x: x.extras),
 
@@ -340,11 +340,11 @@ EVENT_SERIALIZE = dict([
 
     ("links", LINK_SERIALIZE),
 
-    ('created_at', {}),
-    ('updated_at', {}),
+    ('created_at', lambda x: dout(x.created_at)),
+    ('updated_at', lambda x: dout(x.updated_at)),
 
-    ('start_date', {}),
-    ('end_date', {}),
+    ('start_date', lambda x: dout(x.created_at)),
+    ('end_date', lambda x: dout(x.created_at)),
 
     ('all_day', {}),
     ('status', {}),
