@@ -32,6 +32,7 @@ def dout(obj):
     if obj is None:
         return
     return pytz.UTC.localize(obj).isoformat()
+        
 
 
 def sfilter(obj, blacklist):
@@ -343,8 +344,8 @@ EVENT_SERIALIZE = dict([
     ('created_at', lambda x: dout(x.created_at)),
     ('updated_at', lambda x: dout(x.updated_at)),
 
-    ('start_date', lambda x: dout(x.start_date)),
-    ('end_date', lambda x: dout(x.end_date)),
+    ('start_date', {}),
+    ('end_date', {}),
 
     ('all_day', {}),
     ('status', {}),
