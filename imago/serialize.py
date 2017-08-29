@@ -285,6 +285,7 @@ VOTE_SERIALIZE = dict([
     ("identifier", {}),
     ("motion_text", {}),
     ("motion_classification", {}),
+    ("bill_action", {}),
 
     ('created_at', lambda x: dout(x.created_at)),
     ('updated_at', lambda x: dout(x.updated_at)),
