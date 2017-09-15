@@ -277,9 +277,6 @@ BILL_SERIALIZE = dict([
 ])
 
 
-BILL_SERIALIZE['related_bills']['bill'] = BILL_SERIALIZE
-
-
 VOTE_SERIALIZE = dict([
     ("id", {}),
     ("identifier", {}),
