@@ -32,7 +32,7 @@ def dout(obj):
     if obj is None:
         return
     return pytz.UTC.localize(obj).isoformat()
-        
+
 
 
 def sfilter(obj, blacklist):
@@ -263,9 +263,9 @@ BILL_SERIALIZE = dict([
 
     ('actions', {'organization': ORGANIZATION_SERIALIZE, 'description': {},
                  'date': {}, 'classification': lambda x: x.classification,
-                 'order': {}, 
+                 'order': {},
                  'related_entities' : {'name' : {}, 'entity_type' : {},
-                                       'organization_id' : {}, 
+                                       'organization_id' : {},
                                        'person_id' : {}}}),
 
     ('sponsorships', {"primary": {}, "classification": {}, "entity_name": {},
@@ -320,6 +320,7 @@ EVENT_AGENDA_ITEM = dict([
 
     ('related_entities', {"note": {}, "entity_name": {}, "entity_type": {},
                           "entity_id": {}}),
+    ('extras', lambda x: x.extras),
 ])
 
 
