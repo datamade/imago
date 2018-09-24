@@ -321,6 +321,8 @@ EVENT_AGENDA_ITEM = dict([
     ('related_entities', {"note": {}, "entity_name": {}, "entity_type": {},
                           "entity_id": {}}),
     ('extras', lambda x: x.extras),
+
+    ('media', {"note": {}, "date": {}, "offset": {}, "links": LINK_BASE}),
 ])
 
 
