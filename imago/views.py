@@ -89,6 +89,7 @@ class OrganizationDetail(PublicDetailEndpoint):
         'memberships.person.id',
         'memberships.person.name',
         'memberships.post.id',
+        'memberships.extras',
 
         'children.id',
         'children.name',
