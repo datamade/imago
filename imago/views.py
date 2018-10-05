@@ -161,6 +161,7 @@ class PersonDetail(PublicDetailEndpoint):
         'memberships.organization.id',
         'memberships.organization.name',
         'memberships.organization.jurisdiction.id',
+        'memberships.extras',
     ]
 
 
