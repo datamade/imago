@@ -91,7 +91,7 @@ def get_fields(root, fields):
         subfields[prefix].append(postfix)
 
     try:
-        ret = {x: fwrap(root[x]) for x in concrete}
+        ret = {x: fwrap(root[x]) for x in concrete if x != 'searchable'}
     except KeyError as e:
         raise FieldKeyError(*e.args)
 
